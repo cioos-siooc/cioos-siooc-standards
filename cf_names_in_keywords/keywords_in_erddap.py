@@ -1,14 +1,22 @@
 import xml.etree.ElementTree as ET
-import json
-from urllib import request, parse
-from erddapy import ERDDAP
-import os
-import pathlib
-import erddapy
 import pandas as pd
 import argparse
 
 # https://cfconventions.org/Data/cf-standard-names/77/src/cf-standard-name-table.xml
+
+"""
+
+Builds a pandas dataframe of CF Standard Names with aliases and 
+cross-references that list against the unique list of keywords employed by 
+ERDDAP servers hosted at CIOOS RAs.
+
+The resulting list of intersections is dumped to a CSV file for future
+reference.
+
+By default version 77 of the CF standard names is used.
+
+"""
+
 
 erddap_list = [
     {"name":"CIOOS Atlantic", "url":"https://cioosatlantic.ca/erddap"},
@@ -19,6 +27,11 @@ erddap_list = [
 cf_df = None
 
 def build_cf_df(cf_source):
+    """
+
+    Parses the XML source file and returns a pandas dataframe with entries and aliases
+    
+    """
     xml_data = open(cf_source, encoding="UTF-8", mode='r').read()
     root = ET.XML(xml_data)
 
@@ -40,6 +53,13 @@ def build_cf_df(cf_source):
 
 
 def get_keywords(erddap_url):
+    """
+    
+    Acquires the list of unique keywords from the supplied ERDDAP server, 
+    cross-references them against the list of CF names & aliases and returns 
+    the intersection.
+
+    """
     url = erddap_url["url"] + "/categorize/keywords/index.csv"
 
     print("Source: %s, %s" % (erddap_url["name"], url))
@@ -62,7 +82,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--cf_source",
-        help="Path to the CF source file to use",
+        help="Path to the CF XML source file to use.  Default: ./sources/cf/77/cf-standard-name-table.xml",
         action="store",
         default="sources/cf/77/cf-standard-name-table.xml"
     )
