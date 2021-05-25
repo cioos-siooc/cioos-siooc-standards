@@ -47,11 +47,14 @@ def get_keywords(erddap_url):
     df = pd.read_csv(url)
 
     cf_intersection = pd.merge(cf_df, df, how='inner', left_on="cf_name", right_on="Category")
+    cf_intersection["source_ra"] = erddap_url["name"]
 
     # print(cf_intersection.info())
     print("Intersection of CF Names found in Keywords")
     print(cf_intersection)
     print("\n\n")
+
+    return cf_intersection
 
 
 
@@ -79,7 +82,19 @@ if __name__ == "__main__":
     print(cf_df.info())
     print(cf_df)
 
+    intersections = None
     for url in erddap_list:
-        get_keywords(url)
+        result = get_keywords(url)
+
+        try:
+            intersections = intersections.append(result, ignore_index=True)
+        except AttributeError:
+            intersections = result
+
+    print(intersections.info())
+    print(intersections)
+
+    intersections.to_csv("cf_names_in_keywords.csv", columns=["source_ra", "cf_name", "alias_of", "URL"], index=False)
+
 
 
