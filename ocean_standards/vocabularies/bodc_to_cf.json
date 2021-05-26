@@ -1,0 +1,67 @@
+{
+    "Pressure (spatial coordinate) exerted by the water body": {
+        "P07": "sea_water_pressure"
+    },
+    "Depth (spatial coordinate) relative to water surface in the water body": {
+        "P07": "depth"
+    },
+    "Surface elevation.*of the water body": {
+        "P07": "sea_floor_depth_below_sea_surface"
+    },
+    "Temperature.*of the water body": {
+        "P07": ["sea_water_temperature", "sea_surface_temperature"]
+    },
+    "Electrical conductivity.*of the water body": {
+        "P07": "sea_water_electrical_conductivity"
+    },
+    "Salinity.*of the water body": {
+        "P07": "sea_water_salinity"
+    },
+    "Practical salinity.*of the water body": {
+        "P07": "sea_water_practical_salinity"
+    },
+    "Concentration of oxygen {O2 CAS 7782-44-7} per unit mass of the water body": {
+        "P07": ["moles_of_oxygen_per_unit_mass_in_sea_water"]
+    },
+    "Concentration of oxygen {O2 CAS 7782-44-7} per unit volume of the water body": {
+        "P07": [
+            "volume_fraction_of_oxygen_in_sea_water",
+            "mole_concentration_of_dissolved_molecular_oxygen_in_sea_water",
+            "mass_concentration_of_oxygen_in_sea_water"
+        ]
+    },
+    "Concentration of phosphate {PO43- CAS 14265-44-2} per unit mass of the water body": {
+        "P07": "moles_of_phosphate_per_unit_mass_in_sea_water"
+    },
+    "Concentration of phosphate {PO43- CAS 14265-44-2} per unit volume of the water body": {
+        "P07": [
+            "mass_concentration_of_phosphate_in_sea_water",
+            "mole_concentration_of_phosphate_in_sea_water"
+        ]
+    },
+    "Concentration of silicate {SiO44- CAS 17181-37-2} per unit mass of the water body": {
+        "P07": "moles_of_silicate_per_unit_mass_in_sea_water"
+    },
+    "Concentration of silicate {SiO44- CAS 17181-37-2} per unit volume of the water body": {
+        "P07": [
+            "mass_concentration_of_silicate_in_sea_water",
+            "mole_concentration_of_silicate_in_sea_water"
+        ]
+    },
+    "Concentration of nitrite {NO2- CAS 14797-65-0} per unit volume of the water body": {
+        "P07": "moles_of_nitrite_per_unit_mass_in_sea_water"
+    },
+    "Concentration of nitrite {NO2- CAS 14797-65-0} per unit mass of the water body": {
+        "P07": "mole_concentration_of_nitrite_in_sea_water"
+    },
+    "Concentration of nitrate+nitrite {NO3+NO2} per unit volume of the water body": {
+        "P07": "mole_concentration_of_nitrate_and_nitrite_in_sea_water"
+    },
+    "Concentration of nitrate+nitrite {NO3+NO2} per unit mass of the water body": {
+        "P07": "moles_of_nitrate_and_nitrite_per_unit_mass_in_sea_water"
+    },
+    "Concentration of chlorophyll-a {chl-a CAS 479-61-8} per unit volume of the water body": {
+        "P07": "mass_concentration_of_chlorophyll_a_in_sea_water"
+    }
+}
+
