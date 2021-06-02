@@ -4,4 +4,8 @@ Tracking work (via the [issues list](https://github.com/cioos-siooc/cioos-siooc-
 
 ## Overview
 
-![image](https://user-images.githubusercontent.com/3650576/120496873-53985380-c394-11eb-952a-3f7d57db08f8.png)
+
+[
+![CIOOS Vocabulary Standards Connections](https://user-images.githubusercontent.com/30420025/120523176-7887c900-c38a-11eb-9b5a-4be059585588.png)
+](https://lucid.app/lucidchart/invitations/accept/inv_686e787e-7bf6-457f-998e-e835958ee6cc) 
+
